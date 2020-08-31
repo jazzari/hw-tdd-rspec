@@ -8,9 +8,11 @@ env:
     - CC_TEST_REPORTER_ID=e5e05874c16975f4b1bb2e6cea4ac9d468ed27a7e92a6ab5341d17c9bc078f63
     - CCTR=/tmp/cc-test-reporter
 before_install:
-  - rvm @global do gem uninstall bundler -a -x
-  - rvm @global do gem install bundler -v 1.17.3
-  - gem update --system
+  - if [ ${TRAVIS_RUBY_VERSION} = '2.7.0' ]; then
+      gem install bundler -v '< 2';
+    else
+      gem update --system;
+      gem install bundler;
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > $CCTR
   - chmod +x $CCTR
   - $CCTR before-build
