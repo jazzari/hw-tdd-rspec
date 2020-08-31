@@ -5,12 +5,12 @@ gem 'rails', '4.2.9'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.11'
   gem 'byebug'
   gem 'database_cleaner', '1.4.1'
   gem 'capybara', '2.4.4'
   gem 'launchy'
-  gem 'rspec-rails', '3.3.2'
+  gem 'rspec-rails', '3.4.2'
   gem 'ZenTest', '4.12.0'
 end
 
@@ -33,6 +33,8 @@ gem 'uglifier', '>= 2.7.1'
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'bigdecimal', '~> 1.2', '>= 1.2.7'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
